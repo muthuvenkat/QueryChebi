@@ -1,7 +1,9 @@
 import uk.ac.ebi.chebi.webapps.chebiWS.client.ChebiWebServiceClient;
 import uk.ac.ebi.chebi.webapps.chebiWS.model.*;
 
+import javax.xml.namespace.QName;
 import java.io.*;
+import java.net.URL;
 
 /**
  * @author venkat
@@ -23,7 +25,7 @@ public class GetChebiIds {
 	public static void getMatchedChEBIId(String query, String type, Writer writer) throws Exception {
 		try {
 			// Create client
-			ChebiWebServiceClient client = new ChebiWebServiceClient();
+			ChebiWebServiceClient client = new ChebiWebServiceClient(new URL("http://www.ebi.ac.uk/webservices/chebi/2.0/webservice?wsdl"),new QName("https://www.ebi.ac.uk/webservices/chebi", "ChebiWebServiceService"));
 			LiteEntityList entities = null;
 
 			if (type.equalsIgnoreCase(INCHIKEY)) {
@@ -72,6 +74,7 @@ public class GetChebiIds {
 
 		} catch (Exception e) {
 			error++;
+			e.printStackTrace();
 			writer.write(query + "\t-\tNOT EXIST IN CHEBI");
 		}
 
