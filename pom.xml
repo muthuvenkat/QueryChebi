@@ -41,4 +41,11 @@
             <version>2.3.2</version>
         </dependency>
     </dependencies>
+         
+    <repositories>
+        <repository>
+            <id>EBI Public Repository</id>
+            <url>https://www.ebi.ac.uk/~maven/m2repo/</url>
+        </repository>
+    </repositories>
 </project>
