@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/muthuvenkat/QueryChebi.svg?branch=master)](https://travis-ci.org/muthuvenkat/QueryChebi)
+
 # QueryChEBI
 
 QueryChEBI is a wrapper for Webservices to query a list of terms. 
